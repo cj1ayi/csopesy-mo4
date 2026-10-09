@@ -9,8 +9,6 @@
 
 ## Instructions to run
 
-### Alternative (CMake)
-
 1. `cmake -S . -B build`
 2. `cmake --build build`
-3. `.\build\Debug\csopesy_mo3.exe` (Windows)
+3. `.\build\Debug\csopesy_mo4.exe` (Windows)
