@@ -16,3 +16,9 @@ constexpr const char* CLOCK_FORMAT    = "%A, %b %d, %Y | %I:%M:%S %p";
 constexpr float       CLOCK_FONT_SIZE = 20.0f;
 constexpr float       CLOCK_MARGIN    = 12.0f;   // gap from the screen edges
 constexpr float       CLOCK_PADDING   = 8.0f;    // space between text and box edge
+
+// Power button
+constexpr const char* POWER_ICON_PATH      = "assets/icons/power-button.png";
+constexpr float       POWER_ICON_SIZE      = 32.0f;   // icon image size in pixels
+constexpr float       POWER_BUTTON_PADDING = 8.0f;    // space around the icon inside the button
+constexpr float       POWER_BUTTON_MARGIN  = 12.0f;   // gap from the screen edges

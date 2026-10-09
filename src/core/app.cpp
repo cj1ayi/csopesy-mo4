@@ -45,7 +45,7 @@ void App::begin_frame() {
 }
 
 void App::render_shell() {
-    m_desktop.render();
+    m_desktop.render(m_state);
     // TODO - render the ff:
     // 1. Apps (Task Manager + 2 UI apps)
     // 2. Taskbar
