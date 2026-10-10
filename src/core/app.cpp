@@ -19,7 +19,10 @@ bool App::init() {
     ImGui_ImplGlfw_InitForOpenGL(m_window.handle(), true);
     ImGui_ImplOpenGL3_Init(GLSL_VERSION);
 
-    if(!m_desktop.init())
+    if (!m_desktop.init())
+        return false;
+
+    if (!m_taskbar.init())
         return false;
 
     return true;
@@ -45,10 +48,10 @@ void App::begin_frame() {
 }
 
 void App::render_shell() {
-    m_desktop.render(m_state);
-    // TODO - render the ff:
-    // 1. Apps (Task Manager + 2 UI apps)
-    // 2. Taskbar
+    // Draw order = stacking order: back to front
+    m_desktop.render();
+    // TODO: apps (File Explorer, System Info, Task Manager)
+    m_taskbar.render(m_state);   // last, so it sits on top
 }
 
 void App::end_frame() {
@@ -66,6 +69,7 @@ void App::end_frame() {
 
 void App::shutdown() {
     // Reverse order of init
+    m_taskbar.shutdown();
     m_desktop.shutdown();
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();

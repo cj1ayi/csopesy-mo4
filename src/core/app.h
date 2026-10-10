@@ -3,6 +3,7 @@
 #include "window.h"
 #include "shell_state.h"
 #include "shell/desktop.h"
+#include "shell/taskbar.h"
 
 class App {
 public:
@@ -16,6 +17,7 @@ private:
     void end_frame();
 
     Desktop     m_desktop;
+    Taskbar     m_taskbar;
     Window      m_window;
     ShellState  m_state;
 };

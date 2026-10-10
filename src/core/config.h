@@ -17,8 +17,14 @@ constexpr float       CLOCK_FONT_SIZE = 20.0f;
 constexpr float       CLOCK_MARGIN    = 12.0f;   // gap from the screen edges
 constexpr float       CLOCK_PADDING   = 8.0f;    // space between text and box edge
 
-// Power button
+// Taskbar
+constexpr float       TASKBAR_HEIGHT         = 64.0f;
+constexpr float       TASKBAR_BUTTON_SIZE    = 44.0f;   // diameter of each round button
+constexpr float       TASKBAR_BUTTON_SPACING = 12.0f;   // gap between buttons
+constexpr float       TASKBAR_PADDING_X      = 16.0f;   // gap from the left/right screen edges
+
+// Power button (lives on the right side of the taskbar)
 constexpr const char* POWER_ICON_PATH      = "assets/icons/power-button.png";
-constexpr float       POWER_ICON_SIZE      = 32.0f;   // icon image size in pixels
-constexpr float       POWER_BUTTON_PADDING = 8.0f;    // space around the icon inside the button
-constexpr float       POWER_BUTTON_MARGIN  = 12.0f;   // gap from the screen edges
+constexpr float       POWER_ICON_SIZE      = 28.0f;   // icon image size in pixels
+constexpr float       POWER_BUTTON_PADDING =          // space around the icon so the button
+    (TASKBAR_BUTTON_SIZE - POWER_ICON_SIZE) * 0.5f;   // matches the other taskbar buttons
