@@ -25,6 +25,9 @@ bool App::init() {
     if (!m_taskbar.init())
         return false;
 
+    if (!m_task_manager.init())
+        return false;
+
     return true;
 }
 
@@ -50,7 +53,8 @@ void App::begin_frame() {
 void App::render_shell() {
     // Draw order = stacking order: back to front
     m_desktop.render();
-    // TODO: apps (File Explorer, System Info, Task Manager)
+    // TODO: apps (File Explorer, System Info)
+    m_task_manager.render(m_state);
     m_taskbar.render(m_state);   // last, so it sits on top
 }
 
@@ -69,6 +73,7 @@ void App::end_frame() {
 
 void App::shutdown() {
     // Reverse order of init
+    m_task_manager.shutdown();
     m_taskbar.shutdown();
     m_desktop.shutdown();
     ImGui_ImplOpenGL3_Shutdown();
