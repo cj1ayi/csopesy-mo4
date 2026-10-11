@@ -28,3 +28,9 @@ constexpr const char* POWER_ICON_PATH      = "assets/icons/power-button.png";
 constexpr float       POWER_ICON_SIZE      = 28.0f;   // icon image size in pixels
 constexpr float       POWER_BUTTON_PADDING =          // space around the icon so the button
     (TASKBAR_BUTTON_SIZE - POWER_ICON_SIZE) * 0.5f;   // matches the other taskbar buttons
+
+// Task Manager
+constexpr float       TASKMGR_WIDTH           = 460.0f;
+constexpr float       TASKMGR_HEIGHT          = 420.0f;
+constexpr float       TASKMGR_RAND_VOLATILITY = 0.05f; // cpu/mem usage will fluctuate by this much each frame
+constexpr float       TASKMGR_RAND_CHANCE     = 0.01f; // chance per render that a row's values fluctuate
