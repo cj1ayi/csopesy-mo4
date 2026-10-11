@@ -14,8 +14,8 @@ struct DummyProcess {
     int         pid;
     int         base_cpu;      // percent, the value fluctuations swing around
     int         base_mem_kb;
-    int         cpu    = 0;    // values currently shown, set from the base in init()
-    int         mem_kb = 0;
+    int         cpu    = base_cpu;      // values currently shown
+    int         mem_kb = base_mem_kb;
 };
 
 // "processes" that are always running
@@ -33,14 +33,14 @@ DummyProcess APP_PROCESSES[APP_COUNT] = {
 };
 
 std::mt19937 rng{ std::random_device{}() };
+std::uniform_real_distribution<float> roll(0.0f, 1.0f);
+std::uniform_real_distribution<float> swing(-TASKMGR_RAND_VOLATILITY, TASKMGR_RAND_VOLATILITY);
 
 // randomly choose to fluctuate the cpu and mem
 void maybe_fluctuate(DummyProcess& process) {
-    std::uniform_real_distribution<float> roll(0.0f, 1.0f);
     if (roll(rng) >= TASKMGR_RAND_CHANCE)
         return;
 
-    std::uniform_real_distribution<float> swing(-TASKMGR_RAND_VOLATILITY, TASKMGR_RAND_VOLATILITY);
     process.cpu    = std::max(0, process.base_cpu + static_cast<int>(std::lround(swing(rng) * 100.0f)));
     process.mem_kb = static_cast<int>(std::lround(process.base_mem_kb * (1.0f + swing(rng))));
 }
@@ -57,17 +57,7 @@ void draw_process_row(DummyProcess& process) {
 
 }
 
-bool TaskManager::init() {
-    for (DummyProcess& process : SYSTEM_PROCESSES) {
-        process.cpu    = process.base_cpu;
-        process.mem_kb = process.base_mem_kb;
-    }
-    for (DummyProcess& process : APP_PROCESSES) {
-        process.cpu    = process.base_cpu;
-        process.mem_kb = process.base_mem_kb;
-    }
-    return true;
-}
+bool TaskManager::init() { return true; }
 
 void TaskManager::shutdown() {}
 
