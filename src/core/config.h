@@ -29,6 +29,13 @@ constexpr float       POWER_ICON_SIZE      = 28.0f;   // icon image size in pixe
 constexpr float       POWER_BUTTON_PADDING =          // space around the icon so the button
     (TASKBAR_BUTTON_SIZE - POWER_ICON_SIZE) * 0.5f;   // matches the other taskbar buttons
 
+// File Explorer
+constexpr float       FILES_WIDTH         = 720.0f;
+constexpr float       FILES_HEIGHT        = 460.0f;
+constexpr float       FILES_MIN_WIDTH     = 560.0f;
+constexpr float       FILES_MIN_HEIGHT    = 320.0f;
+constexpr float       FILES_SIDEBAR_WIDTH = 140.0f;
+
 // System Information
 constexpr float       SYSINFO_WIDTH  = 640.0f;
 constexpr float       SYSINFO_HEIGHT = 480.0f;
