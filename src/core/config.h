@@ -28,3 +28,7 @@ constexpr const char* POWER_ICON_PATH      = "assets/icons/power-button.png";
 constexpr float       POWER_ICON_SIZE      = 28.0f;   // icon image size in pixels
 constexpr float       POWER_BUTTON_PADDING =          // space around the icon so the button
     (TASKBAR_BUTTON_SIZE - POWER_ICON_SIZE) * 0.5f;   // matches the other taskbar buttons
+
+// System Information
+constexpr float       SYSINFO_WIDTH  = 640.0f;
+constexpr float       SYSINFO_HEIGHT = 480.0f;
