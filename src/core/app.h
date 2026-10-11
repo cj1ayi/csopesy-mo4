@@ -4,6 +4,7 @@
 #include "shell_state.h"
 #include "shell/desktop.h"
 #include "shell/taskbar.h"
+#include "apps/system_info.h"
 #include "apps/task_manager.h"
 
 class App {
@@ -19,6 +20,7 @@ private:
 
     Desktop     m_desktop;
     Taskbar     m_taskbar;
+    SystemInfo  m_system_info;
     TaskManager m_task_manager;
     Window m_window;
     ShellState  m_state;
