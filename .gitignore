@@ -1,2 +1,10 @@
 *.exe
 /build
+
+# Visual Studio local settings and CMake build output
+.vs/
+/out/
+*.suo
+*.user
+*.VC.db
+*.VC.VC.opendb
