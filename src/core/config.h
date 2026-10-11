@@ -32,3 +32,9 @@ constexpr float       POWER_BUTTON_PADDING =          // space around the icon s
 // System Information
 constexpr float       SYSINFO_WIDTH  = 640.0f;
 constexpr float       SYSINFO_HEIGHT = 480.0f;
+
+// Task Manager
+constexpr float       TASKMGR_WIDTH           = 460.0f;
+constexpr float       TASKMGR_HEIGHT          = 420.0f;
+constexpr float       TASKMGR_RAND_VOLATILITY = 0.05f; // cpu/mem usage will fluctuate by this much each frame
+constexpr float       TASKMGR_RAND_CHANCE     = 0.01f; // chance per render that a row's values fluctuate
