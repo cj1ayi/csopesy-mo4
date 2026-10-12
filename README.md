@@ -7,6 +7,8 @@
 - Santiago, Juan Ramon
 - Tan, Roberta
 
+Main entry file: [`src/main.cpp`](src/main.cpp).
+
 ## Instructions to run
 
 1. `cmake -S . -B build`
